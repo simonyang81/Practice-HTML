@@ -1,0 +1,58 @@
+.holy-grail {
+    display: flex;
+    flex-direction: column;
+}
+
+.holy-grail_header, .holy-grail_footer {
+    flex: 0 0 100%;
+    border: 1px solid blue;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.holy-grail_body {
+    display: flex;
+    align-items: center;
+}
+
+.holy-grail_sidebar {
+
+}
+
+.holy-grail_sidebar--first {
+    order: 1;
+    border-right: 1px solid blue;
+    border-left: 1px solid blue;
+}
+
+.holy-grail_sidebar--second {
+    order: 3;
+    border-right: 1px solid blue;
+    border-left: 1px solid blue;
+}
+
+.holy-grail_content {
+    order: 2;
+}
+
+@media all and (min-width: 720px) {
+    .holy-grail_body {
+        flex-direction: row;
+    }
+
+    .holy-grail_sidebar {
+        flex: 0 0 180px;
+    }
+
+    .holy-grail_content {
+        flex: 1;
+    }
+}
+
+@media all and (min-width: 960px) {
+    .holy-grail_sidebar {
+        flex: 0 0 240px;
+    }
+
+}

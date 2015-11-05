@@ -1,0 +1,18 @@
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user_avatar {
+    flex: 0 0 96px;
+    width: 96px;
+    height: 96px;
+    background-color: #e7e7e7;
+}
+
+.user_description {
+    flex: 1;
+    margin-left: 24px;
+    padding: 12px;
+    border: solid 1px #e7e7e7;
+}
