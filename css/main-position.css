@@ -1,0 +1,17 @@
+.relative {
+    position: relative;
+    border: 1px solid blue;
+    padding: 5px;
+}
+
+.relative2 {
+
+    position: relative;
+    top: -20px;
+    left: 20px;
+    background-color: white;
+    width: 500px;
+    border: 1px solid blue;
+    padding: 5px;
+
+}

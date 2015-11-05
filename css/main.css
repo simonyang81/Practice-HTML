@@ -1,0 +1,21 @@
+.grid {
+    border: solid 1px #e7e7e7;
+}
+
+.grid_row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.grid_row1 {
+    display: flex;
+    align-items: center;
+}
+
+.grid_item {
+
+    flex: 1;
+    padding: 12px;
+    border: solid 1px #e7e7e7;
+
+}
