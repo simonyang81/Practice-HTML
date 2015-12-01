@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>图片中心点全屏缩放代码</title>
+    <script type="text/javascript" src="http://i1.sinaimg.cn/jslib/jquery-1.4.2.min.js"></script>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #coverpage {
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: #000;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        #onepics {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .onepic_wrap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: block;
+            position: relative;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- cover begin -->
+<div style="height: 200px"></div>
+<div id="coverpage"><div id="onepics"><div class="onepic_wrap"><img src="images/Login-Splash-Picture.png" class="wrap_pic"></div></div></div>
+<div style="height: 100px"></div>
+
+<script type="text/javascript">
+    var win_height;
+    var win_width;
+    var original_width = 1104;
+    var original_height = 598;
+
+    var pic_width, pic_height, pic_left, pic_top;
+    OnePicAction();
+
+    function OnePicAction() {
+        win_height = $("#coverpage").height();
+        win_width = $("#coverpage").width();
+
+        //裁剪图片
+        if (Math.ceil(win_height * original_width / original_height) < win_width) {
+            pic_width = win_width;
+            pic_height = Math.ceil(win_width * original_height / original_width);
+            pic_left = 0;
+            pic_top = -Math.ceil((pic_height - win_height));
+        } else {
+            pic_height = win_height;
+            pic_width = Math.ceil(win_height * original_width / original_height);
+            pic_left = -Math.ceil((pic_width - win_width) / 2);
+            pic_top = 0;
+        }
+        $("#onepics .wrap_pic")
+                .css("width", pic_width + "px")
+                .css("height", pic_height + "px")
+                .css("margin-top", pic_top + "px")
+                .css("margin-left", pic_left + "px");
+
+    }
+    //浏览器大小变化时壹图处理
+    window.onresize = function () {
+        OnePicAction();
+    }
+</script>
+</body>
+</html>
